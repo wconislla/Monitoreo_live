@@ -1,0 +1,34 @@
+--COMANDOS A EJECUTAR(ABRIR CMD O POWER SHELL COMO ADMINISTRADOR)
+--=================================================================
+#-- Permitir escuchar en todas las IPs
+--======================================
+netsh http add urlacl url=http://+:8080/ user=Todos
+
+#-- Abrir el firewall
+--======================
+netsh advfirewall firewall add rule name="Monitoreo Backups" dir=in action=allow protocol=tcp localport=8080
+
+--CREAR TAREA POR SI LA PC SE REINICIA
+--=======================================
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -WindowStyle Hidden -File C:\Monitoreo\monitoreo_server.ps1" -WorkingDirectory "C:\Monitoreo"
+$trigger = New-ScheduledTaskTrigger -AtStartup
+$settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -RestartCount 3 -RestartInterval (New-TimeSpan -Minutes 1) -ExecutionTimeLimit 0
+Register-ScheduledTask -TaskName "MonitoreoBackups" -Action $action -Trigger $trigger -Settings $settings -RunLevel Highest -User "SYSTEM"
+
+
+---EN POWER SHELL
+--========================================================================
+
+cd D:\Monitoreo_live  ENTER
+powershell -ExecutionPolicy Bypass -File monitoreo_server.ps1
+
+
+---EJECUTAR ESTO PARA QUE FUNCIONE CON LA TAREA PROGRAMADA EN POWER SHELL
+--========================================================================
+
+Start-ScheduledTask -TaskName "MonitoreoBackups"
+
+--PARA ABRIR
+--=========================
+
+http://localhost:8080
