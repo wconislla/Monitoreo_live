@@ -275,7 +275,7 @@ function render(d) {
             {k:'Ruta',v:'/backup/PROD/rman/bkp_0/'}
         ]},
         { t:'RMAN Archivelogs', st:ra, num:ra==='PENDING'?'Pendiente':d.rman_arch?.tamano||'0', det:[
-            {k:'Programado',v:hoy+' &middot; 12:30 hrs (diario)'},
+            {k:'Programado',v:hoy+' &middot; 12:00 hrs (diario)'},
             {k:'Inicio',v:pv(ra, d.rman_arch?.inicio)},{k:'Fin',v:pv(ra, d.rman_arch?.fin)},
             {k:'Duracion',v:ra==='PENDING'?'-':(d.rman_arch?.minutos||0)+' min'},{k:'Archivos',v:ra==='PENDING'?'-':(d.rman_arch_files||[]).length+' piezas'},
             {k:'Ruta',v:'/backup/PROD/rman/bkp_arc/'}
@@ -404,10 +404,12 @@ function renderMssql(d) {
             {k:'Duracion max.',v:(m.full_local?.max_min||0)+' min'},{k:'Bases',v:(m.full_local?.bases||0)+' BD'},
             {k:'Original',v:(m.full_local?.tamano_gb||0)+' GB'},{k:'Comprimido',v:(m.full_local?.comprimido_gb||0)+' GB'}
         ]},
-        { t:'Diferencial (Por implementar)', st:'NOT_FOUND', num:'', det:[
-            {k:'Estado',v:'Pendiente de implementacion'},
-            {k:'Programado',v:'Por definir'},
-            {k:'Nota',v:'Actualmente se ejecuta Full Diario'}
+        { t:'Diferencial', st:m.diferencial_real?.status||'NOT_FOUND', num:m.diferencial_real?.status==='COMPLETED'?(m.diferencial_real?.comprimido_gb>=1?m.diferencial_real.comprimido_gb+' GB':(m.diferencial_real.comprimido_gb*1024).toFixed(0)+' MB'):'—', det:[
+            {k:'Fecha backup',v:m.diferencial_real?.fecha||'-'},
+            {k:'Programado',v:d.fecha+' &middot; 00:00 hrs (diario)'},
+            {k:'Inicio',v:m.diferencial_real?.inicio||'-'},{k:'Fin',v:m.diferencial_real?.fin||'-'},
+            {k:'Duracion max.',v:(m.diferencial_real?.max_min||0)+' min'},{k:'Bases',v:(m.diferencial_real?.bases||0)+' BD'},
+            {k:'Original',v:(m.diferencial_real?.tamano_gb||0)+' GB'},{k:'Comprimido',v:(m.diferencial_real?.comprimido_gb||0)+' GB'}
         ]}
     ];
     document.getElementById('cardsMssql').innerHTML = mCards.map(c=>`
