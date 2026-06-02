@@ -374,33 +374,42 @@ foreach ($row in $sqlBackups) {
     }
 }
 
-# Determinar ultimo diario y ultimo sabado
+# Determinar ultimo diario (Full D), ultimo sabado (Full D >25 bases), y ultimo diferencial (I)
 $fechasOrdenadas = @($sqlByDate.Keys | Sort-Object -Descending)
 
 $ultimoDiario = $null; $ultimoDiarioFecha = $null
 $ultimoSabado = $null; $ultimoSabadoFecha = $null
+$ultimoDiff = $null; $ultimoDiffFecha = $null
 
-# Full semanal = dia con mas de 25 bases (normalmente fin de semana)
-# Diario = dia con <= 25 bases
 foreach ($f in $fechasOrdenadas) {
-    $baseCount = $sqlByDate[$f].Count
-    if (-not $ultimoDiario -and $baseCount -le 25) {
-        $ultimoDiario = $sqlByDate[$f]
+    $items = $sqlByDate[$f]
+    $itemsFull = @($items | Where-Object { $_.tipo -eq 'D' })
+    $itemsDiff = @($items | Where-Object { $_.tipo -eq 'I' })
+    
+    if (-not $ultimoDiff -and $itemsDiff.Count -gt 0) {
+        $ultimoDiff = $itemsDiff
+        $ultimoDiffFecha = $f
+    }
+    if (-not $ultimoDiario -and $itemsFull.Count -gt 0 -and $itemsFull.Count -le 25) {
+        $ultimoDiario = $itemsFull
         $ultimoDiarioFecha = $f
     }
-    if (-not $ultimoSabado -and $baseCount -gt 25) {
-        $ultimoSabado = $sqlByDate[$f]
+    if (-not $ultimoSabado -and $itemsFull.Count -gt 25) {
+        $ultimoSabado = $itemsFull
         $ultimoSabadoFecha = $f
     }
-    if ($ultimoDiario -and $ultimoSabado) { break }
+    if ($ultimoDiario -and $ultimoSabado -and $ultimoDiff) { break }
 }
 
 if (-not $ultimoDiario -and $fechasOrdenadas.Count -gt 0) {
-    $ultimoDiarioFecha = $fechasOrdenadas[0]
-    $ultimoDiario = $sqlByDate[$ultimoDiarioFecha]
+    $fullItems = @($sqlByDate[$fechasOrdenadas[0]] | Where-Object { $_.tipo -eq 'D' })
+    if ($fullItems.Count -gt 0) {
+        $ultimoDiarioFecha = $fechasOrdenadas[0]
+        $ultimoDiario = $fullItems
+    }
 }
 
-# Construir diferencial (diario)
+# Construir Full Diario (tipo D)
 $diffObj = @{ status = "NOT_FOUND"; fecha = ""; tipo = ""; bases = 0; tamano_gb = 0; comprimido_gb = 0; inicio = ""; fin = ""; max_min = 0; nota = "" }
 $diffFiles = @()
 if ($ultimoDiario) {
@@ -410,21 +419,46 @@ if ($ultimoDiario) {
     $sorted = @($ultimoDiario | Sort-Object { $_.inicio })
     $inicioMin = $sorted[0].inicio
     $finMax = ($ultimoDiario | Sort-Object { $_.fin } -Descending | Select-Object -First 1).fin
-    $tipo = $ultimoDiario[0].tipo
     
     $diffObj = @{
         status        = "COMPLETED"
         fecha         = $ultimoDiarioFecha
-        tipo          = $tipo
+        tipo          = "D"
         bases         = $ultimoDiario.Count
         tamano_gb     = [math]::Round($totalTam, 2)
         comprimido_gb = [math]::Round($totalComp, 2)
         inicio        = $inicioMin
         fin           = $finMax
         max_min       = $maxMin
-        nota          = "Full diario (tipo $tipo)"
+        nota          = "Full diario"
     }
     $diffFiles = $sorted
+}
+
+# Construir Diferencial real (tipo I)
+$diffRealObj = @{ status = "NOT_FOUND"; fecha = ""; tipo = ""; bases = 0; tamano_gb = 0; comprimido_gb = 0; inicio = ""; fin = ""; max_min = 0; nota = "" }
+$diffRealFiles = @()
+if ($ultimoDiff) {
+    $totalTam = ($ultimoDiff | ForEach-Object { $_.tamano_gb } | Measure-Object -Sum).Sum
+    $totalComp = ($ultimoDiff | ForEach-Object { $_.comprimido_gb } | Measure-Object -Sum).Sum
+    $maxMin = ($ultimoDiff | ForEach-Object { $_.min } | Measure-Object -Maximum).Maximum
+    $sorted = @($ultimoDiff | Sort-Object { $_.inicio })
+    $inicioMin = $sorted[0].inicio
+    $finMax = ($ultimoDiff | Sort-Object { $_.fin } -Descending | Select-Object -First 1).fin
+    
+    $diffRealObj = @{
+        status        = "COMPLETED"
+        fecha         = $ultimoDiffFecha
+        tipo          = "I"
+        bases         = $ultimoDiff.Count
+        tamano_gb     = [math]::Round($totalTam, 2)
+        comprimido_gb = [math]::Round($totalComp, 2)
+        inicio        = $inicioMin
+        fin           = $finMax
+        max_min       = $maxMin
+        nota          = "Diferencial diario"
+    }
+    $diffRealFiles = $sorted
 }
 
 # Construir full sabado
@@ -518,6 +552,8 @@ $resultado = [ordered]@{
         full_local        = $fullLocalObj
         full_local_files  = $fullLocalFiles
         diferencial_files = $diffFiles
+        diferencial_real       = $diffRealObj
+        diferencial_real_files = $diffRealFiles
         
         historial_mssql = $historialMssql
     }

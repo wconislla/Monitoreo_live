@@ -1,148 +1,144 @@
 ﻿{
-    "fecha":  "2026-06-01",
-    "timestamp":  "2026-06-01 14:47:32",
+    "fecha":  "2026-06-02",
+    "timestamp":  "2026-06-02 15:28:16",
     "database":  "PROD",
     "host":  "192.168.9.17:1521",
     "rman_full":  {
-                      "fecha":  "2026-06-01",
-                      "inicio":  "08:15:49",
-                      "minutos":  49.3,
-                      "tamano":  "23.24G",
+                      "fecha":  "2026-06-02",
+                      "inicio":  "01:30:03",
+                      "minutos":  54.97,
+                      "tamano":  "25.68G",
                       "status":  "COMPLETED",
-                      "fin":  "09:05:07"
+                      "fin":  "02:25:01"
                   },
     "rman_full_files":  [
                             {
                                 "status":  "A",
                                 "tipo":  "DISK",
-                                "inicio":  "08:15",
-                                "archivo":  "/backup/PROD/rman/bkp_0/01-06-2026/inc_0_archivelogs_cq4pi85m_1_1",
-                                "tamano_mb":  124.85,
-                                "fin":  "08:16"
+                                "inicio":  "01:30",
+                                "archivo":  "/backup/PROD/rman/bkp_0/02-06-2026/inc_0_archivelogs_d34pk4os_1_1",
+                                "tamano_mb":  2635.05,
+                                "fin":  "01:34"
                             },
                             {
                                 "status":  "A",
                                 "tipo":  "DISK",
-                                "inicio":  "08:16",
-                                "archivo":  "/backup/PROD/rman/bkp_0/01-06-2026/inc_0_datafiles_cr4pi866_1_1",
-                                "tamano_mb":  23658.25,
-                                "fin":  "09:04"
+                                "inicio":  "01:34",
+                                "archivo":  "/backup/PROD/rman/bkp_0/02-06-2026/inc_0_datafiles_d44pk51q_1_1",
+                                "tamano_mb":  23644.69,
+                                "fin":  "02:24"
                             },
                             {
                                 "status":  "A",
                                 "tipo":  "DISK",
-                                "inicio":  "09:05",
-                                "archivo":  "/backup/PROD/rman/bkp_0/01-06-2026/inc_0_datafiles_cs4pib1t_1_1",
+                                "inicio":  "02:24",
+                                "archivo":  "/backup/PROD/rman/bkp_0/02-06-2026/inc_0_datafiles_d54pk7vo_1_1",
                                 "tamano_mb":  1.39,
-                                "fin":  "09:05"
+                                "fin":  "02:24"
                             },
                             {
                                 "status":  "A",
                                 "tipo":  "DISK",
-                                "inicio":  "09:05",
-                                "archivo":  "/backup/PROD/rman/bkp_0/01-06-2026/inc_0_controlfile_ct4pib20_1_1",
+                                "inicio":  "02:24",
+                                "archivo":  "/backup/PROD/rman/bkp_0/02-06-2026/inc_0_controlfile_d64pk7vq_1_1",
                                 "tamano_mb":  11.58,
-                                "fin":  "09:05"
+                                "fin":  "02:24"
                             },
                             {
                                 "status":  "A",
                                 "tipo":  "DISK",
-                                "inicio":  "09:05",
-                                "archivo":  "/backup/PROD/rman/bkp_0/01-06-2026/inc_0_spfile_cu4pib22_1_1",
+                                "inicio":  "02:25",
+                                "archivo":  "/backup/PROD/rman/bkp_0/02-06-2026/inc_0_spfile_d74pk7vs_1_1",
                                 "tamano_mb":  0.08,
-                                "fin":  "09:05"
+                                "fin":  "02:25"
                             }
                         ],
     "rman_arch":  {
                       "inicio":  "14:00:02",
-                      "fecha":  "2026-06-01",
-                      "minutos":  0.5,
+                      "fecha":  "2026-06-02",
+                      "minutos":  0.52,
                       "status":  "COMPLETED",
-                      "fin":  "14:00:32",
+                      "fin":  "14:00:33",
                       "ejecutados":  2,
                       "total_diario":  3,
-                      "tamano":  "17.09G"
+                      "tamano":  "11.48G"
                   },
     "rman_arch_files":  [
                             {
                                 "inicio":  "07:00",
                                 "fin":  "07:00",
-                                "archivo":  "/backup/PROD/rman/bkp_arc/2026-06-01_07-00-01/ctl_cm4pi3ni_1_1",
+                                "archivo":  "/backup/PROD/rman/bkp_arc/2026-06-02_07-00-01/ctl_d84pko3i_1_1",
                                 "tamano_mb":  11.58,
                                 "status":  "A"
                             },
                             {
                                 "inicio":  "07:00",
-                                "fin":  "07:01",
-                                "archivo":  "/backup/PROD/rman/bkp_arc/2026-06-01_07-00-01/arch_cn4pi3nn",
-                                "tamano_mb":  8182.9,
+                                "fin":  "07:00",
+                                "archivo":  "/backup/PROD/rman/bkp_arc/2026-06-02_07-00-01/arch_d94pko3m",
+                                "tamano_mb":  3933.47,
                                 "status":  "A"
                             },
                             {
                                 "inicio":  "14:00",
                                 "fin":  "14:00",
-                                "archivo":  "/backup/PROD/rman/bkp_arc/2026-06-01_14-00-02/ctl_cv4pisb3_1_1",
+                                "archivo":  "/backup/PROD/rman/bkp_arc/2026-06-02_14-00-01/ctl_da4plgn2_1_1",
                                 "tamano_mb":  11.58,
                                 "status":  "A"
                             },
                             {
                                 "inicio":  "14:00",
                                 "fin":  "14:00",
-                                "archivo":  "/backup/PROD/rman/bkp_arc/2026-06-01_14-00-02/arch_d04pisb7",
-                                "tamano_mb":  9297.56,
+                                "archivo":  "/backup/PROD/rman/bkp_arc/2026-06-02_14-00-01/arch_db4plgn7",
+                                "tamano_mb":  7806.99,
                                 "status":  "A"
                             }
                         ],
     "expdp":  {
                   "inicio":  "03:10:02",
-                  "total_gb":  52.83,
-                  "fecha":  "2026-06-01",
+                  "total_gb":  52.92,
+                  "fecha":  "2026-06-02",
                   "minutos":  17,
                   "status":  "COMPLETED",
-                  "archivos":  10,
+                  "archivos":  9,
                   "fin":  "03:27:26",
                   "ruta":  "/backup/PROD/dmp"
               },
     "expdp_files":  [
                         {
-                            "nombre":  "full_dmp_2026-06-01_01.dmp",
+                            "nombre":  "full_dmp_2026-06-02_01.dmp",
                             "tamano_gb":  8
                         },
                         {
-                            "nombre":  "full_dmp_2026-06-01_02.dmp",
+                            "nombre":  "full_dmp_2026-06-02_02.dmp",
                             "tamano_gb":  8
                         },
                         {
-                            "nombre":  "full_dmp_2026-06-01_03.dmp",
+                            "nombre":  "full_dmp_2026-06-02_03.dmp",
                             "tamano_gb":  8
                         },
                         {
-                            "nombre":  "full_dmp_2026-06-01_04.dmp",
+                            "nombre":  "full_dmp_2026-06-02_04.dmp",
                             "tamano_gb":  0.07
                         },
                         {
-                            "nombre":  "full_dmp_2026-06-01_05.dmp",
+                            "nombre":  "full_dmp_2026-06-02_05.dmp",
                             "tamano_gb":  8
                         },
                         {
-                            "nombre":  "full_dmp_2026-06-01_06.dmp",
+                            "nombre":  "full_dmp_2026-06-02_06.dmp",
                             "tamano_gb":  8
                         },
                         {
-                            "nombre":  "full_dmp_2026-06-01_07.dmp",
-                            "tamano_gb":  8
+                            "nombre":  "full_dmp_2026-06-02_07.dmp",
+                            "tamano_gb":  7.36
                         },
                         {
-                            "nombre":  "full_dmp_2026-06-01_08.dmp",
-                            "tamano_gb":  2.91
+                            "nombre":  "full_dmp_2026-06-02_08.dmp",
+                            "tamano_gb":  4.31
                         },
                         {
-                            "nombre":  "full_dmp_2026-06-01_09.dmp",
-                            "tamano_gb":  1.6
-                        },
-                        {
-                            "nombre":  "full_dmp_2026-06-01_10.dmp",
-                            "tamano_gb":  0.25
+                            "nombre":  "full_dmp_2026-06-02_09.dmp",
+                            "tamano_gb":  1.18
                         }
                     ],
     "historial":  [
@@ -150,8 +146,31 @@
                           "rman_arch":  {
                                             "inicio":  "14:00:02",
                                             "status":  "COMPLETED",
-                                            "fin":  "14:00:32",
-                                            "tamano":  "9.09G"
+                                            "fin":  "14:00:33",
+                                            "tamano":  "7.63G"
+                                        },
+                          "rman_full":  {
+                                            "inicio":  "01:30:03",
+                                            "status":  "COMPLETED",
+                                            "fin":  "02:25:01",
+                                            "tamano":  "25.68G",
+                                            "minutos":  54.97
+                                        },
+                          "expdp":  {
+                                        "archivos":  9,
+                                        "status":  "COMPLETED",
+                                        "fin":  "03:27",
+                                        "inicio":  "03:10",
+                                        "total_gb":  52.92
+                                    },
+                          "fecha":  "2026-06-02"
+                      },
+                      {
+                          "rman_arch":  {
+                                            "inicio":  "20:00:01",
+                                            "status":  "COMPLETED",
+                                            "fin":  "20:00:31",
+                                            "tamano":  "5.75G"
                                         },
                           "rman_full":  {
                                             "inicio":  "08:15:49",
@@ -161,11 +180,11 @@
                                             "minutos":  49.3
                                         },
                           "expdp":  {
-                                        "archivos":  10,
-                                        "status":  "COMPLETED",
-                                        "fin":  "03:27",
-                                        "inicio":  "03:10",
-                                        "total_gb":  52.83
+                                        "archivos":  0,
+                                        "status":  "NOT_FOUND",
+                                        "fin":  "",
+                                        "inicio":  "",
+                                        "total_gb":  0
                                     },
                           "fecha":  "2026-06-01"
                       },
@@ -283,29 +302,6 @@
                                         "total_gb":  0
                                     },
                           "fecha":  "2026-05-27"
-                      },
-                      {
-                          "rman_arch":  {
-                                            "inicio":  "20:00:02",
-                                            "status":  "COMPLETED",
-                                            "fin":  "20:00:21",
-                                            "tamano":  "5.47G"
-                                        },
-                          "rman_full":  {
-                                            "inicio":  "01:30:02",
-                                            "status":  "COMPLETED",
-                                            "fin":  "02:24:22",
-                                            "tamano":  "24.88G",
-                                            "minutos":  54.33
-                                        },
-                          "expdp":  {
-                                        "archivos":  0,
-                                        "status":  "NOT_FOUND",
-                                        "fin":  "",
-                                        "inicio":  "",
-                                        "total_gb":  0
-                                    },
-                          "fecha":  "2026-05-26"
                       }
                   ],
     "mssql":  {
@@ -316,11 +312,11 @@
                   "diferencial":  {
                                       "tipo":  "I",
                                       "max_min":  0,
-                                      "fin":  "00:00:06",
-                                      "fecha":  "2026-06-01",
-                                      "inicio":  "00:00:01",
-                                      "tamano_gb":  0.06,
-                                      "comprimido_gb":  0,
+                                      "fin":  "00:00:26",
+                                      "fecha":  "2026-06-02",
+                                      "inicio":  "00:00:02",
+                                      "tamano_gb":  3.28,
+                                      "comprimido_gb":  2.63,
                                       "status":  "COMPLETED",
                                       "bases":  11,
                                       "nota":  "Diferencial diario"
@@ -481,117 +477,138 @@
                                        ],
                   "diferencial_files":  [
                                             {
-                                                "inicio":  "00:00:01",
-                                                "fecha":  "2026-06-01",
+                                                "inicio":  "00:00:02",
+                                                "fecha":  "2026-06-02",
                                                 "comprimido_gb":  0.0001,
                                                 "nombre":  "CONTRATOS",
-                                                "tamano_gb":  0.002,
+                                                "tamano_gb":  0.003,
                                                 "tipo":  "I",
                                                 "min":  0,
                                                 "fin":  "00:00:02"
                                             },
                                             {
                                                 "inicio":  "00:00:02",
-                                                "fecha":  "2026-06-01",
+                                                "fecha":  "2026-06-02",
+                                                "comprimido_gb":  0.0009,
+                                                "nombre":  "CooperativaDocumentos",
+                                                "tamano_gb":  0.006,
+                                                "tipo":  "I",
+                                                "min":  0,
+                                                "fin":  "00:00:03"
+                                            },
+                                            {
+                                                "inicio":  "00:00:03",
+                                                "fecha":  "2026-06-02",
+                                                "comprimido_gb":  0.0002,
+                                                "nombre":  "ENVIOBANCO",
+                                                "tamano_gb":  0.003,
+                                                "tipo":  "I",
+                                                "min":  0,
+                                                "fin":  "00:00:03"
+                                            },
+                                            {
+                                                "inicio":  "00:00:03",
+                                                "fecha":  "2026-06-02",
+                                                "comprimido_gb":  0.0032,
+                                                "nombre":  "halcon_2016",
+                                                "tamano_gb":  0.0118,
+                                                "tipo":  "I",
+                                                "min":  0,
+                                                "fin":  "00:00:03"
+                                            },
+                                            {
+                                                "inicio":  "00:00:03",
+                                                "fecha":  "2026-06-02",
+                                                "comprimido_gb":  0.0009,
+                                                "nombre":  "Halcon2021",
+                                                "tamano_gb":  0.005,
+                                                "tipo":  "I",
+                                                "min":  0,
+                                                "fin":  "00:00:04"
+                                            },
+                                            {
+                                                "inicio":  "00:00:03",
+                                                "fecha":  "2026-06-02",
                                                 "comprimido_gb":  0.0001,
                                                 "nombre":  "DBA",
                                                 "tamano_gb":  0.002,
                                                 "tipo":  "I",
                                                 "min":  0,
-                                                "fin":  "00:00:02"
-                                            },
-                                            {
-                                                "inicio":  "00:00:02",
-                                                "fecha":  "2026-06-01",
-                                                "comprimido_gb":  0.0001,
-                                                "nombre":  "CooperativaDocumentos",
-                                                "tamano_gb":  0.0021,
-                                                "tipo":  "I",
-                                                "min":  0,
-                                                "fin":  "00:00:02"
-                                            },
-                                            {
-                                                "inicio":  "00:00:02",
-                                                "fecha":  "2026-06-01",
-                                                "comprimido_gb":  0.0002,
-                                                "nombre":  "halcon_2016",
-                                                "tamano_gb":  0.0021,
-                                                "tipo":  "I",
-                                                "min":  0,
                                                 "fin":  "00:00:03"
                                             },
                                             {
-                                                "inicio":  "00:00:02",
-                                                "fecha":  "2026-06-01",
-                                                "comprimido_gb":  0.0001,
-                                                "nombre":  "ENVIOBANCO",
-                                                "tamano_gb":  0.002,
-                                                "tipo":  "I",
-                                                "min":  0,
-                                                "fin":  "00:00:02"
-                                            },
-                                            {
-                                                "inicio":  "00:00:03",
-                                                "fecha":  "2026-06-01",
-                                                "comprimido_gb":  0.0003,
-                                                "nombre":  "micro",
-                                                "tamano_gb":  0.0333,
-                                                "tipo":  "I",
-                                                "min":  0,
-                                                "fin":  "00:00:06"
-                                            },
-                                            {
-                                                "inicio":  "00:00:03",
-                                                "fecha":  "2026-06-01",
-                                                "comprimido_gb":  0.0001,
-                                                "nombre":  "Halcon2021",
-                                                "tamano_gb":  0.002,
-                                                "tipo":  "I",
-                                                "min":  0,
-                                                "fin":  "00:00:03"
-                                            },
-                                            {
-                                                "inicio":  "00:00:03",
-                                                "fecha":  "2026-06-01",
-                                                "comprimido_gb":  0.0001,
+                                                "inicio":  "00:00:04",
+                                                "fecha":  "2026-06-02",
+                                                "comprimido_gb":  0.0189,
                                                 "nombre":  "impulsa",
-                                                "tamano_gb":  0.002,
+                                                "tamano_gb":  0.0372,
                                                 "tipo":  "I",
                                                 "min":  0,
-                                                "fin":  "00:00:03"
+                                                "fin":  "00:00:04"
                                             },
                                             {
-                                                "inicio":  "00:00:06",
-                                                "fecha":  "2026-06-01",
+                                                "inicio":  "00:00:04",
+                                                "fecha":  "2026-06-02",
+                                                "comprimido_gb":  2.6034,
+                                                "nombre":  "micro",
+                                                "tamano_gb":  3.1964,
+                                                "tipo":  "I",
+                                                "min":  0,
+                                                "fin":  "00:00:24"
+                                            },
+                                            {
+                                                "inicio":  "00:00:25",
+                                                "fecha":  "2026-06-02",
                                                 "comprimido_gb":  0.0001,
                                                 "nombre":  "MisfotosApp",
                                                 "tamano_gb":  0.002,
                                                 "tipo":  "I",
                                                 "min":  0,
-                                                "fin":  "00:00:06"
+                                                "fin":  "00:00:25"
                                             },
                                             {
-                                                "inicio":  "00:00:06",
-                                                "fecha":  "2026-06-01",
-                                                "comprimido_gb":  0.0001,
+                                                "inicio":  "00:00:25",
+                                                "fecha":  "2026-06-02",
+                                                "comprimido_gb":  0.0002,
                                                 "nombre":  "notificacion",
                                                 "tamano_gb":  0.0021,
                                                 "tipo":  "I",
                                                 "min":  0,
-                                                "fin":  "00:00:06"
+                                                "fin":  "00:00:25"
                                             },
                                             {
-                                                "inicio":  "00:00:06",
-                                                "fecha":  "2026-06-01",
-                                                "comprimido_gb":  0.0007,
+                                                "inicio":  "00:00:25",
+                                                "fecha":  "2026-06-02",
+                                                "comprimido_gb":  0.0026,
                                                 "nombre":  "prestamoqr",
-                                                "tamano_gb":  0.005,
+                                                "tamano_gb":  0.0138,
                                                 "tipo":  "I",
                                                 "min":  0,
-                                                "fin":  "00:00:06"
+                                                "fin":  "00:00:26"
                                             }
                                         ],
                   "historial_mssql":  [
+                                          {
+                                              "full_local":  {
+                                                                 "tamano_gb":  0,
+                                                                 "inicio":  "",
+                                                                 "fin":  "",
+                                                                 "nota":  "Solo sabados",
+                                                                 "bases":  0,
+                                                                 "status":  "NOT_FOUND",
+                                                                 "comprimido_gb":  0
+                                                             },
+                                              "diff":  {
+                                                           "tipo":  "I",
+                                                           "fin":  "00:00:26",
+                                                           "inicio":  "00:00:02",
+                                                           "tamano_gb":  3.28,
+                                                           "bases":  11,
+                                                           "status":  "COMPLETED",
+                                                           "comprimido_gb":  2.63
+                                                       },
+                                              "fecha":  "2026-06-02"
+                                          },
                                           {
                                               "full_local":  {
                                                                  "tamano_gb":  0,
@@ -717,27 +734,6 @@
                                                            "comprimido_gb":  5.56
                                                        },
                                               "fecha":  "2026-05-27"
-                                          },
-                                          {
-                                              "full_local":  {
-                                                                 "tamano_gb":  0,
-                                                                 "inicio":  "",
-                                                                 "fin":  "",
-                                                                 "nota":  "Solo sabados",
-                                                                 "bases":  0,
-                                                                 "status":  "NOT_FOUND",
-                                                                 "comprimido_gb":  0
-                                                             },
-                                              "diff":  {
-                                                           "tipo":  "I",
-                                                           "fin":  "00:00:17",
-                                                           "inicio":  "00:00:01",
-                                                           "tamano_gb":  3.17,
-                                                           "bases":  11,
-                                                           "status":  "COMPLETED",
-                                                           "comprimido_gb":  2.52
-                                                       },
-                                              "fecha":  "2026-05-26"
                                           }
                                       ]
               }
